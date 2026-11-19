@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login to Spendly and manage your expenses, budgets, and financial goals."
+    />
+    <title>Login | Spendly</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/refined.css" />
+  </head>
+
+  <body data-page="login" class="modern-login-body">
+    <header class="public-header">
+      <nav class="public-nav">
+        <a class="public-brand" href="index.html">Spendly</a>
+        <div class="public-nav-links">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="public-nav-actions">
+          <a
+            class="public-login-btn active"
+            href="login.html"
+            aria-current="page"
+            >Login</a
+          >
+          <a class="public-primary-btn" href="signup.html">Get Started</a>
+        </div>
+      </nav>
+    </header>
+    <main class="modern-login-page">
+      <section class="modern-login-card">
+        <div class="modern-login-form-panel">
+          <a
+            class="modern-login-brand"
+            href="index.html"
+            aria-label="Spendly home"
+          >
+            <span class="modern-brand-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 18V9M12 18V5M19 18v-6"></path>
+                <path d="M3 20h18"></path>
+              </svg>
+            </span>
+            <span>Spendly</span>
+          </a>
+
+          <div class="modern-login-heading">
+            <span class="modern-eyebrow">Personal finance dashboard</span>
+            <h1>Welcome back</h1>
+            <p>
+              Sign in to track expenses, manage your budget, and continue
+              working toward your goals.
+            </p>
+          </div>
+
+          <form id="loginForm" class="modern-login-form" autocomplete="on">
+            <div class="modern-form-field">
+              <label for="email">Email address</label>
+              <div class="modern-input">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h16v12H4z"></path>
+                  <path d="M4 7l8 6 8-6"></path>
+                </svg>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="Enter your email address"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="modern-form-field">
+              <div class="modern-label-row">
+                <label for="password">Password</label>
+              </div>
+
+              <div class="modern-input">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                </svg>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  value=""
+                  required
+                />
+                <button
+                  id="passwordToggle"
+                  class="modern-password-toggle"
+                  type="button"
+                  aria-label="Show password"
+                >
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"
+                    ></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <button class="modern-login-submit" type="submit">
+              Sign in
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="M13 6l6 6-6 6"></path>
+              </svg>
+            </button>
+          </form>
+
+          <p class="modern-signup-line">
+            New to Spendly?
+            <button id="signupButton" type="button">Create an account</button>
+          </p>
+
+          <p class="modern-demo-note">
+            Enter your email address and password to continue.
+          </p>
+        </div>
+
+        <aside
+          class="modern-login-visual"
+          aria-label="Spendly dashboard preview"
+        >
+          <div class="visual-orb orb-one"></div>
+          <div class="visual-orb orb-two"></div>
+
+          <div class="visual-copy">
+            <span>Smarter money habits</span>
+            <h2>See where your money goes, before it disappears.</h2>
+            <p>
+              One simple dashboard for expenses, budgets, categories, reports,
+              and saving goals.
+            </p>
+          </div>
+
+          <div class="preview-dashboard">
+            <div class="preview-top">
+              <div>
+                <span>Available balance</span>
+                <strong>Rs. 1,260.75</strong>
+              </div>
+              <span class="preview-badge">+8.4%</span>
+            </div>
+
+            <div class="preview-chart">
+              <div class="chart-lines">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <svg
+                viewBox="0 0 420 150"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  class="preview-area"
+                  d="M0 130 C50 120 55 75 105 88 S165 125 205 75 S270 100 310 48 S365 68 420 18 L420 150 L0 150 Z"
+                ></path>
+                <path
+                  class="preview-line"
+                  d="M0 130 C50 120 55 75 105 88 S165 125 205 75 S270 100 310 48 S365 68 420 18"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="preview-summary">
+              <div>
+                <span class="preview-icon purple">↗</span>
+                <p>Total budget</p>
+                <strong>Rs. 1,800</strong>
+              </div>
+              <div>
+                <span class="preview-icon orange">↘</span>
+                <p>Expenses</p>
+                <strong>Rs. 649.25</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-expense-card">
+            <div class="floating-icon">✓</div>
+            <div>
+              <span>Budget status</span>
+              <strong>You're on track this month</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="loginToast" class="toast"></div>
+    <script src="js/login.js"></script>
+  </body>
+</html>

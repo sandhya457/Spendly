@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget | Spendly</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/refined.css" />
+  </head>
+  <body data-page="budget">
+    <div class="app-shell">
+      <div id="sidebarMount"></div>
+      <section class="page-area">
+        <div id="topbarMount"></div>
+        <main class="page-content">
+          <div class="section-header">
+            <h1 class="page-heading" style="margin: 0">Budget</h1>
+            <span class="muted" style="font-size: 11px"
+              >Currency: Nepalese Rupee (NPR)</span
+            >
+          </div>
+          <section class="two-column">
+            <article class="card card-padding">
+              <h2 class="card-title">Monthly Budget</h2>
+              <form id="budgetForm">
+                <div class="form-group">
+                  <label for="monthlyBudget">Total Monthly Budget (NPR)</label>
+                  <input
+                    id="monthlyBudget"
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    required
+                  />
+                </div>
+                <button class="primary-button" type="submit">
+                  Save Budget
+                </button>
+              </form>
+            </article>
+            <article class="card card-padding">
+              <h2 class="card-title">Budget Tips</h2>
+              <p class="muted" style="font-size: 12px; line-height: 1.7">
+                Use category limits to control spending. A common approach is
+                50% for needs, 30% for wants and 20% for savings.
+              </p>
+            </article>
+          </section>
+          <section class="card card-padding" style="margin-top: 18px">
+            <div class="section-header"><h2>Category Budgets</h2></div>
+            <div class="goal-list" id="budgetCategories"></div>
+          </section>
+
+          <div id="budgetLimitModal" class="modal-backdrop">
+            <section
+              class="modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="budgetLimitTitle"
+            >
+              <div class="modal-header">
+                <h2 id="budgetLimitTitle">Edit category budget</h2>
+                <button
+                  class="modal-close"
+                  type="button"
+                  data-close-modal="budgetLimitModal"
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+              </div>
+              <form id="budgetLimitForm">
+                <div class="form-group">
+                  <label for="budgetLimitAmount">Monthly limit (NPR)</label
+                  ><input
+                    id="budgetLimitAmount"
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    max="999999999"
+                    step=".01"
+                    required
+                  />
+                </div>
+                <div class="modal-actions">
+                  <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="budgetLimitModal"
+                  >
+                    Cancel</button
+                  ><button class="primary-button" type="submit">
+                    Save limit
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </main>
+      </section>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/app.js"></script>
+    <script src="js/budget.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+# Local secrets, runtime files and development tooling
+.env
+.env.*
+!.env.example
+*.log
+*.sql.bak
+*.sqlite
+.vscode/
+.idea/
+.DS_Store
+node_modules/
+vendor/

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting | Spendly</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/refined.css" />
+  </head>
+  <body data-page="settings">
+    <div class="app-shell">
+      <div id="sidebarMount"></div>
+      <section class="page-area">
+        <div id="topbarMount"></div>
+        <main class="page-content">
+          <h1 class="page-heading">Settings</h1>
+          <section class="card card-padding">
+            <div class="settings-list">
+              <div class="setting-item">
+                <div>
+                  <h3>Dark Mode</h3>
+                  <p>Use a darker interface throughout Spendly.</p>
+                </div>
+                <label class="switch"
+                  ><input id="darkMode" type="checkbox" /><span></span
+                ></label>
+              </div>
+
+              <div class="setting-item">
+                <div>
+                  <h3>Budget Alerts</h3>
+                  <p>Get alerts when spending approaches your limit.</p>
+                </div>
+                <label class="switch"
+                  ><input id="budgetAlerts" type="checkbox" /><span></span
+                ></label>
+              </div>
+            </div>
+          </section>
+          <section class="card card-padding" style="margin-top: 18px">
+            <h2 class="card-title">Your data</h2>
+            <p class="muted" style="font-size: 12px">
+              Delete expenses, income, goals and budgets. Your account and
+              savings vaults will stay intact.
+            </p>
+            <div class="settings-buttons">
+              <button type="button" id="exportData" class="secondary-button">
+                Download account data</button
+              ><button type="button" id="resetData" class="danger-button">
+                Erase financial records
+              </button>
+            </div>
+          </section>
+
+          <section class="card card-padding danger-zone">
+            <h2 class="card-title">Close your account</h2>
+            <p class="muted">
+              Permanently remove your user profile, all financial records,
+              vaults and vault histories.
+            </p>
+            <button
+              type="button"
+              class="danger-button"
+              id="deleteAccountButton"
+            >
+              Delete my account
+            </button>
+          </section>
+        </main>
+      </section>
+    </div>
+    <div id="accountDeleteModal" class="modal-backdrop">
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteAccountTitle"
+      >
+        <div class="modal-header">
+          <h2 id="deleteAccountTitle">Permanently delete account</h2>
+          <button
+            class="modal-close"
+            type="button"
+            data-close-modal="accountDeleteModal"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+        <p class="muted">
+          This cannot be undone. Download a copy of your records first if
+          necessary.
+        </p>
+        <form id="deleteAccountForm">
+          <div class="form-group">
+            <label for="deletePassword">Current password</label
+            ><input
+              id="deletePassword"
+              type="password"
+              class="form-control"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="deleteConfirm">Type DELETE to confirm</label
+            ><input
+              id="deleteConfirm"
+              class="form-control"
+              pattern="DELETE"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="secondary-button"
+              data-close-modal="accountDeleteModal"
+            >
+              Cancel</button
+            ><button type="submit" class="danger-button">
+              Delete permanently
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="js/app.js"></script>
+    <script src="js/settings.js"></script>
+  </body>
+</html>

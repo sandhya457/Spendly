@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Spendly</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/refined.css" />
+  </head>
+
+  <body data-page="profile">
+    <div class="app-shell">
+      <div id="sidebarMount"></div>
+      <section class="page-area">
+        <div id="topbarMount"></div>
+        <main class="page-content">
+          <h1 class="page-heading">Profile</h1>
+          <section class="profile-section">
+            <div class="profile-card">
+              <div class="avatar-wrap">
+                <img
+                  id="profileAvatar"
+                  class="profile-avatar"
+                  src="assets/avatar.jpg"
+                  alt="Profile"
+                />
+                <button
+                  id="cameraButton"
+                  class="camera-button"
+                  aria-label="Change profile photo"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M8 6l1-2h6l1 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"
+                    />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+                <input id="avatarInput" type="file" accept="image/*" hidden />
+              </div>
+              <h2 id="profileName">Alex Student</h2>
+              <p id="profileEmail">alex.student@gmail.com</p>
+              <button
+                id="editProfileButton"
+                class="secondary-button"
+                style="min-height: 25px; font-size: 9px; padding: 0 11px"
+              >
+                Edit Profile
+              </button>
+            </div>
+
+            <div class="personal-info">
+              <h2>Personal Information</h2>
+              <dl>
+                <div>
+                  <dt>Full Name</dt>
+                  <dd id="infoName"></dd>
+                </div>
+                <div>
+                  <dt>Email</dt>
+                  <dd id="infoEmail"></dd>
+                </div>
+                <div>
+                  <dt>Phone</dt>
+                  <dd id="infoPhone"></dd>
+                </div>
+                <div>
+                  <dt>Student ID</dt>
+                  <dd id="infoStudentId"></dd>
+                </div>
+                <div>
+                  <dt>Course</dt>
+                  <dd id="infoCourse"></dd>
+                </div>
+                <div>
+                  <dt>Year</dt>
+                  <dd id="infoYear"></dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <section class="security-section">
+            <h2>Security</h2>
+            <article class="security-row">
+              <div class="security-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l8 5v10l-8 5-8-5V7z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <div>
+                <h3>Change Password</h3>
+                <p>Update your password regularly</p>
+              </div>
+              <button
+                id="changePasswordButton"
+                class="secondary-button"
+                style="min-height: 24px; font-size: 9px"
+              >
+                Change
+              </button>
+            </article>
+            <article class="security-row">
+              <div class="security-icon" aria-hidden="true">✉</div>
+              <div>
+                <h3>Update email address</h3>
+                <p>Verify your password before changing your login email.</p>
+              </div>
+              <button
+                id="changeEmailButton"
+                class="secondary-button"
+                type="button"
+              >
+                Change
+              </button>
+            </article>
+          </section>
+
+          <div id="profileModal" class="modal-backdrop">
+            <section class="modal">
+              <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="modal-close" data-close-modal="profileModal">
+                  &times;
+                </button>
+              </div>
+              <form id="profileForm">
+                <div class="two-column">
+                  <div class="form-group">
+                    <label>Full Name</label
+                    ><input id="editName" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Login email</label
+                    ><input
+                      id="editEmail"
+                      class="form-control"
+                      type="email"
+                      readonly
+                      title="Change email under Security"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label
+                    ><input id="editPhone" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Student ID</label
+                    ><input id="editStudentId" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Course</label
+                    ><input id="editCourse" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Year</label
+                    ><select id="editYear" class="form-control">
+                      <option>1st Year</option>
+                      <option>2nd Year</option>
+                      <option>3rd Year</option>
+                      <option>4th Year</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-actions">
+                  <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="profileModal"
+                  >
+                    Cancel</button
+                  ><button class="primary-button" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <div id="emailModal" class="modal-backdrop">
+            <section
+              class="modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="emailTitle"
+            >
+              <div class="modal-header">
+                <h2 id="emailTitle">Change email address</h2>
+                <button
+                  class="modal-close"
+                  type="button"
+                  data-close-modal="emailModal"
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+              </div>
+              <form id="emailForm">
+                <div class="form-group">
+                  <label for="newEmail">New login email</label
+                  ><input
+                    id="newEmail"
+                    class="form-control"
+                    type="email"
+                    maxlength="190"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="emailCurrentPassword">Current password</label
+                  ><input
+                    id="emailCurrentPassword"
+                    class="form-control"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                  />
+                </div>
+                <p class="muted">
+                  Make sure you have access to your new email address before
+                  updating it.
+                </p>
+                <div class="modal-actions">
+                  <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="emailModal"
+                  >
+                    Cancel</button
+                  ><button type="submit" class="primary-button">
+                    Update email
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+          <div id="passwordModal" class="modal-backdrop">
+            <section class="modal">
+              <div class="modal-header">
+                <h2>Change Password</h2>
+                <button class="modal-close" data-close-modal="passwordModal">
+                  &times;
+                </button>
+              </div>
+              <form id="passwordForm">
+                <div class="form-group">
+                  <label>Current Password</label
+                  ><input
+                    class="form-control"
+                    type="password"
+                    minlength="8"
+                    autocomplete="current-password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>New Password</label
+                  ><input
+                    id="newPassword"
+                    class="form-control"
+                    type="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Confirm New Password</label
+                  ><input
+                    id="confirmPassword"
+                    class="form-control"
+                    type="password"
+                    minlength="8"
+                    required
+                  />
+                </div>
+                <div class="modal-actions">
+                  <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="passwordModal"
+                  >
+                    Cancel</button
+                  ><button class="primary-button" type="submit">Update</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </main>
+      </section>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Spendly</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/refined.css" />
+  </head>
+  <body class="public-body">
+    <header class="public-header">
+      <nav class="public-nav">
+        <a class="public-brand" href="index.html">Spendly</a>
+        <div class="public-nav-links">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="public-nav-actions">
+          <a class="public-login-btn" href="login.html">Login</a>
+          <a class="public-primary-btn" href="signup.html">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="public-main">
+      <section class="signup-section">
+        <div class="public-container signup-grid">
+          <div class="signup-card">
+            <h1>Create Account</h1>
+            <p>A better picture of your money starts here.</p>
+
+            <form class="signup-form">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input
+                  id="fullName"
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="signupEmail">Email Address</label>
+                <input
+                  id="signupEmail"
+                  class="form-control"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input
+                  id="signupPassword"
+                  class="form-control"
+                  type="password"
+                  minlength="8"
+                  autocomplete="new-password"
+                  placeholder="At least 8 characters"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                  id="confirmPassword"
+                  class="form-control"
+                  type="password"
+                  minlength="8"
+                  autocomplete="new-password"
+                  placeholder="Confirm your password"
+                  required
+                />
+              </div>
+
+              <p class="form-help">
+                Your account and transactions are stored securely on your
+                Spendly server.
+              </p>
+
+              <button
+                class="public-primary-btn"
+                style="width: 100%; min-height: 44px"
+                type="submit"
+              >
+                Sign Up
+              </button>
+            </form>
+
+            <p class="signup-bottom">
+              Already have an account? <a href="login.html">Login</a>
+            </p>
+          </div>
+
+          <div class="signup-visual">
+            <div class="signup-visual-card">
+              <h3>Start your finance journey with Spendly</h3>
+              <div class="visual-stack">
+                <div class="stack-card">
+                  <strong>Track daily expenses</strong>
+                  <p>
+                    Add food, transport, education, entertainment and other
+                    expenses quickly.
+                  </p>
+                </div>
+                <div class="stack-card">
+                  <strong>Set smart budgets</strong>
+                  <p>
+                    Control monthly spending and stay disciplined with your
+                    money.
+                  </p>
+                </div>
+                <div class="stack-card">
+                  <strong>Grow your savings</strong>
+                  <p>
+                    Create saving goals and monitor progress with a simple
+                    dashboard.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="public-footer">
+      <div class="public-container">
+        <p>
+          © 2026 Spendly. Manage expenses, budgets, reports and saving goals.
+        </p>
+        <div class="public-nav-links" style="gap: 14px">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="about.html">About Us</a>
+
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/signup.js"></script>
+  </body>
+</html>
