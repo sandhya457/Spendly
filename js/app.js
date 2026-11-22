@@ -10,8 +10,8 @@ const Spendly = (() => {
     ["income", "Add income", "income.html", "↙"],
     ["budget", "Budgets", "budget.html", "◫"],
     ["reports", "Reports", "reports.html", "▥"],
-    ["goals", "Savings goals", "goals.html", "◎"],
-    ["vault", "Savings vaults", "vault.html", "◈"],
+    // ["goals", "Savings goals", "goals.html", "◎"],
+    // ["vault", "Savings vaults", "vault.html", "◈"],
     ["categories", "Categories", "categories.html", "▤"],
     ["settings", "Settings", "settings.html", "⚙"],
   ];
